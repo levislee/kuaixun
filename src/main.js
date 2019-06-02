@@ -3,12 +3,18 @@
 import Vue from 'vue'
 import App from './App'
 import Vuex from 'vuex'
+<<<<<<< HEAD
 import Element from 'element-ui'
+=======
+>>>>>>> 207a23ef61342ae14d444d68a53046d2ac7849cf
 import VueRouter from 'vue-router'
 import './config/rem.js'
 Vue.use(VueRouter)
 Vue.use(Vuex)
+<<<<<<< HEAD
 Vue.use(Element)
+=======
+>>>>>>> 207a23ef61342ae14d444d68a53046d2ac7849cf
 import router from './router'
 Vue.config.productionTip = false
  import api from './js/api_config.js'

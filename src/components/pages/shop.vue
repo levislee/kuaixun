@@ -19,5 +19,8 @@ export default {
     }
 }
 </script>
+<<<<<<< HEAD
 styl
+=======
+>>>>>>> 207a23ef61342ae14d444d68a53046d2ac7849cf
 

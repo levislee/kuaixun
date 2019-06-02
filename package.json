@@ -22,8 +22,12 @@
     "vue": "^2.5.2",
     "vue-quill-editor": "^3.0.4",
     "vue-router": "^3.0.1",
+<<<<<<< HEAD
     "vuex": "^3.0.1",
     "element-ui":"^2.9.1"
+=======
+    "vuex": "^3.0.1"
+>>>>>>> 207a23ef61342ae14d444d68a53046d2ac7849cf
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
