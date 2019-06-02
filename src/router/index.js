@@ -4,7 +4,7 @@ import Router from 'vue-router'
 // import shop from '../components/pages/shop.vue'
 import { resolve } from 'url';
 const shop=resolve=>require(['@/components/pages/shop'],resolve);
-const Home=resolve=>require(['@/components/HelloWorld'],resolve);
+const Home=resolve=>require(['@/components/Home'],resolve);
 // const HelloWorld=resolve=require(['@/components/HelloWorld'],resolve)
 Vue.use(Router)
 export default new Router({
