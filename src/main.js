@@ -5,7 +5,8 @@ import App from './App'
 import Vuex from 'vuex'
 import Element from 'element-ui'
 import VueRouter from 'vue-router'
-import './config/rem.js'
+import './css/media.css'
+import './css/base.css'
 Vue.use(VueRouter)
 Vue.use(Vuex) 
 Vue.use(Element)
