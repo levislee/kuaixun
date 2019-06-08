@@ -6,7 +6,14 @@
             <img src="https://resource.jinse.com/www/v3/img/logo.svg?v=1810" alt="">
         </div>
         <div id="headleftcontent">
-                <div class="navcontent" v-for="(item,index) in title" :key="index">{{item}}</div>
+                <div class="navcontent">
+                    <router-link :to="{name:'Home'}">首页</router-link>
+                    </div>              
+                <div class="navcontent">
+                    <router-link :to="{name:'flash'}">7*24快讯</router-link>
+                    </div>                
+                <div class="navcontent">首页</div>               
+                <div class="navcontent">首页</div>
                 <div class="navmore" @mouseenter="show()" @mouseleave="hidden(1)">下拉
                    <ul class="navmorecontent" ref="show">
                        <li>科研下载</li>

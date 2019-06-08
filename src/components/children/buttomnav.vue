@@ -1,7 +1,7 @@
 <template>
-  <el-tabs v-model="activeName" @tab-click="handleClick" >
+  <el-tabs v-model="activeName" @tab-click="handleClick" class="btmnav">
     <el-tab-pane label="头条" name="first">
-        <div class="btnavlist">
+        <div class="btnavlist" v-for="item in 8" :key="item">
             <div class="btnavimg"><img src="https://img.jinse.com/1898851_small.png" alt=""></div>
             <div class="btnavlistartical">
                 <ul>
@@ -24,19 +24,21 @@
   </el-tabs>
 </template>
 <style>
-.el-tabs__item{
+.btmnav .el-tabs__item{
     font-size: 22px;
-    color: #999
+    color: #999;
 }
-.el-tabs__item:hover{
+.btmnav .el-tabs__item:hover{
     color: red;
 }
-.el-tabs__item.is-active{
+.btmnav .el-tabs__item.is-active{
     color: black
 }
-.el-tabs__active-bar{
-    background-color: red;
+.btmnav .el-tabs__active-bar{
+    background-color: red ;
+    width: 28px ;
 }
+
 .btnavlist{
     display: flex;
     justify-content: flex-start;
@@ -111,6 +113,9 @@
     },
     methods: {
       handleClick(tab, event) {
+          console.log(tab);
+          console.log(event);
+          
       }
     }
   };

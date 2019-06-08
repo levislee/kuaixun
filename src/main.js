@@ -7,6 +7,7 @@ import Element from 'element-ui'
 import VueRouter from 'vue-router'
 import './css/media.css'
 import './css/base.css'
+import '../node_modules/element-ui/lib/theme-chalk/index.css'
 Vue.use(VueRouter)
 Vue.use(Vuex) 
 Vue.use(Element)
