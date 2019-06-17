@@ -41,6 +41,7 @@
                 <!--右边-->
                 <div class="flashright">
                    <link-list></link-list>
+                    <flash-tabs></flash-tabs>
                 </div>
             </div>
         </div>
@@ -170,11 +171,13 @@
 </style>
 <script>
 const flashMain=relove=>require(['./chidren/flashcontent.vue'],relove)
-const linkList=relove=>require(['../../children/link.vue'],relove)
+const linkList=relove=>require(['../../children/link.vue'],relove);
+const flashTabs=relove=>require(['./chidren/flashtabs.vue'],relove)
 export default {
     components:{
         flashMain,
         linkList,
+        flashTabs,
     }
 }
 </script>

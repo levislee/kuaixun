@@ -74,6 +74,7 @@
   width: 770px;
 }
 .analyse {
+  width: 684px;
   position: relative;
   border-left: 2px solid #ddccdd;
   display: flex;
@@ -112,6 +113,7 @@
   font-size: 16px;
 }
 .analysemain {
+  width: 684px;
   margin-top: 15px;
   margin-bottom: 30px;
   display: flex;

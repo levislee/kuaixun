@@ -70,10 +70,12 @@
     height: 22px;
     margin-left: 25px;
 }
+.headerright.
 .navcontent:hover{
     color: red;
     border-bottom: 2px solid red;
 }
+
 .navmore{
     line-height: 18px;
     color: #d8d8d8;
