@@ -3,7 +3,7 @@
         <div id="flashmain">
  
             <ul class="flashnav">
-                <li  class="flashnavlist" v-for="item in 6" :key=item>
+                <li  class="flashnavlist" v-for="item in 6" :key='item'>
                     <img src="https://img.jinse.com/1578092" alt="">
                     <div class="flashlistright">
                     <span class="flashnavlisttitle">Chainup</span>
@@ -173,12 +173,14 @@
 const flashMain=relove=>require(['./chidren/flashcontent.vue'],relove)
 const linkList=relove=>require(['../../children/link.vue'],relove);
 const flashTabs=relove=>require(['./chidren/flashtabs.vue'],relove)
+import {loadMore} from '../../common/mixin.js'
 export default {
     components:{
         flashMain,
         linkList,
         flashTabs,
-    }
+    },
+    mixins:[loadMore]
 }
 </script>
 
