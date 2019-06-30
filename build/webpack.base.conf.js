@@ -39,10 +39,10 @@ module.exports = {
     }
   },
   externals: {
-    'vue': 'Vue',
-    'vue-router': 'VueRouter',
-    'vuex': 'Vuex',
-    'element-ui': 'ELEMENT',
+    // 'vue': 'Vue',
+    // 'vue-router': 'VueRouter',
+    // 'vuex': 'Vuex',
+    // 'element-ui': 'ELEMENT',
   },
   module: {
     rules: [

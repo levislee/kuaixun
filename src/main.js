@@ -1,5 +1,12 @@
 
 import App from './App'
+import Vue from 'vue'
+import Vuex from 'vuex';
+import VueRouter from 'vue-router';
+import elementUI from 'element-ui'
+Vue.use(elementUI);
+Vue.use(Vuex);
+Vue.use(VueRouter);
 import './css/media.css'
 import './css/base.css'
 import '../node_modules/element-ui/lib/theme-chalk/index.css'
