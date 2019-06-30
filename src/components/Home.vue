@@ -47,7 +47,7 @@
             </div>
             <div class="link-right">
               <span class="link-id">ZT.COM</span>
-              <span>邀请好友坐享高鹗1</span>
+              <span>邀请好友坐享高鹗</span>
             </div>
           </div>
         </div>
