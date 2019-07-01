@@ -68,7 +68,7 @@ const homeFlash=resolve=>require(['./children/flash'],resolve);
 export default {
   data() {
     return {
-      bijiasuo: [1, 2, 3, 4, 1, 1, 1, 1, 1, 1, 1, 1]
+      bijiasuo: [1, 2, 3, 5, 6, 1, 1, 1, 1, 1, 1, 1]
     };
   },
   components: {
