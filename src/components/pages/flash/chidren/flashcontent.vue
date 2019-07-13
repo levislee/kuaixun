@@ -1,48 +1,49 @@
 <template>
-  <el-tabs v-model="activeName" @tab-click="handleClick" class="flashmain">
-    <el-tab-pane label="快讯" name="first">
-      <div class="analyse" v-for="item in type" :key="item">
-        <div class="grade"></div>
-        <div class="time">18:10</div>
-        <div class="analyselist">
-          <div class="analysetitle">
-            <span class="only">独家</span>
-            <span class="istitle">行情|数字货币行情播报</span>
-          </div>
-          <div class="analysemain">
-            <span>据行情显示，BTC当前报价7952美元，针对当前的走势，分析师Potter表示BTC从5月30号大幅拉升至9000美元上方然后掉头回落至目前8000美元下方整体走势结构一直处于下降通道内震荡下行，从盘面上能看出近期BTC在2次下探触及通道下边线获得支撑后迎来了阶段反弹，4小时MACD快慢线0轴下方金叉后并向上发散，币价也快速向上拉起并向通道中轨贴近，但我们发现BTC在尝试突破中轨压制时量能并未持续放大，依旧处于缩量态势，而且4小时多次形成向上插针至布林上边线的形态，说明上方存在一定的空头抛盘，短期内直接向上形成有效突破的可能性不大，近期还将延续弱势震荡走势，后续若能放量突破通道中轨与布林上边线双压制，BTC还将有进一步上攻通道上边线的机会。长期周线级别来看，从4月初至目前的多头趋势并未明确逆转，本周为这轮趋势反弹的首次调整，后续下探寻求支撑后或将还有波段上涨的可能。近期支撑7850美元，压力8100美元</span>
-            <img src="https://img.jinse.com/1922429_rate.png" alt v-if="item==1">
-            <span v-else-if="item==2">原文链接</span>
-            <div class="market-data" v-else-if="item==3">
-              <div class="market-data-list" v-for="items in 6" :key="items">
-                <div class="market-title">WAX</div>
-                <div>游戏币领涨</div>
-                <ul class="market-up">
-                  <li>$0.12</li>
-                  <li>↑</li>
-                </ul>
-                <div class="market-change">
-                  <div class="market-change-list" v-for="item in 3" :key="item">
-                    <p>+44.94%</p>
-                    <p>24H涨幅</p>
+  <div>
+    <el-tabs v-model="activeName" @tab-click="handleClick" class="flashmain">
+      <el-tab-pane label="快讯" name="first">
+        <div class="analyse" v-for="item in type" :key="item">
+          <div class="grade"></div>
+          <div class="time">18:10</div>
+          <div class="analyselist">
+            <div class="analysetitle">
+              <span class="only">独家</span>
+              <span class="istitle">行情|数字货币行情播报</span>
+            </div>
+            <div class="analysemain">
+              <span>据行情显示，BTC当前报价7952美元，针对当前的走势，分析师Potter表示BTC从5月30号大幅拉升至9000美元上方然后掉头回落至目前8000美元下方整体走势结构一直处于下降通道内震荡下行，从盘面上能看出近期BTC在2次下探触及通道下边线获得支撑后迎来了阶段反弹，4小时MACD快慢线0轴下方金叉后并向上发散，币价也快速向上拉起并向通道中轨贴近，但我们发现BTC在尝试突破中轨压制时量能并未持续放大，依旧处于缩量态势，而且4小时多次形成向上插针至布林上边线的形态，说明上方存在一定的空头抛盘，短期内直接向上形成有效突破的可能性不大，近期还将延续弱势震荡走势，后续若能放量突破通道中轨与布林上边线双压制，BTC还将有进一步上攻通道上边线的机会。长期周线级别来看，从4月初至目前的多头趋势并未明确逆转，本周为这轮趋势反弹的首次调整，后续下探寻求支撑后或将还有波段上涨的可能。近期支撑7850美元，压力8100美元</span>
+              <img src="https://img.jinse.com/1922429_rate.png" alt v-if="item==1" />
+              <span v-else-if="item==2">原文链接</span>
+              <div class="market-data" v-else-if="item==3">
+                <div class="market-data-list" v-for="items in 6" :key="items">
+                  <div class="market-title">WAX</div>
+                  <div>游戏币领涨</div>
+                  <ul class="market-up">
+                    <li>$0.12</li>
+                    <li>↑</li>
+                  </ul>
+                  <div class="market-change">
+                    <div class="market-change-list" v-for="item in 3" :key="item">
+                      <p>+44.94%</p>
+                      <p>24H涨幅</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="analysebottom">
-            <ul class="analyseBtmain">
-              <li>利好 60</li>
-              <li>利空 55</li>
-              <li>分享</li>
-            </ul>
+            <div class="analysebottom">
+              <ul class="analyseBtmain">
+                <li>利好 60</li>
+                <li>利空 55</li>
+                <li @click="toshare()">分享</li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </el-tab-pane>
-    <el-tab-pane label="分析" name="second">配置管理</el-tab-pane>
-    <el-tab-pane label="动态" name="third">角色管理</el-tab-pane>
-  </el-tabs>
+      </el-tab-pane>
+    </el-tabs>
+    <app-share :isshare="isshare" ></app-share>
+  </div>
 </template>
 <style>
 .flashmain .el-tabs__nav {
@@ -134,9 +135,9 @@
   justify-content: flex-start;
   flex-wrap: wrap;
 }
-.market-data-list{
-   width: 210px;
-    background-color: #fff;
+.market-data-list {
+  width: 210px;
+  background-color: #fff;
   padding: 15px;
   box-sizing: border-box;
   border: 1px solid #dcdcdc;
@@ -179,16 +180,24 @@
 </style>
 
 <script>
+import appShare from "./share.vue";
 export default {
+  components: {
+    appShare
+  },
   data() {
     return {
       activeName: "first",
-      type: [1, 2, 3]
+      type: [1, 2, 3],
+      isshare: false
     };
   },
   methods: {
     handleClick(tab, event) {
       console.log(tab, event);
+    },
+    toshare() {
+      this.isshare = true;
     }
   }
 };

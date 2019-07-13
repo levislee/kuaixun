@@ -1,7 +1,6 @@
 <template>
   <div id="home">
     <!--顶部走马灯-->
-    <app-slider></app-slider>
 
     <div id="bijiasuo">
       <div class="bijiasuoitem" v-for="(item,index) in bijiasuo" :key="index">
@@ -31,7 +30,6 @@
         <li class="middlerightcenter">
           <p>据国家互联网信息办公室《区块链信息服务管理规定》要求，“区块链信息服务提供者”应积极在区块链信息服务备案管理系统备案。</p>
         </li>
-        <li class="middlerightbootom">111订阅</li>
       </ul>
     </div>
     <!--中下部分导航-->
@@ -61,7 +59,6 @@
 </template>
 
 <script>
-const appSlider=resolve=>require(['./pages/Slider/Slider'],resolve);
 const caroucel=resolve=>require(['./pages/Slider/caroucel'],resolve); 
 const bottomNav=resolve=>require(['./children/buttomnav'],resolve); 
 const homeFlash=resolve=>require(['./children/flash'],resolve); 
@@ -72,7 +69,6 @@ export default {
     };
   },
   components: {
-    appSlider,
     caroucel,
     bottomNav,
     homeFlash

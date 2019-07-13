@@ -1,10 +1,9 @@
 <template>
   <el-tabs v-model="activeName" @tab-click="handleClick">
-    <el-tab-pane label="快讯" name="first" class="homeflash">
+    <el-tab-pane v-for="(item,index) in navs" :key="index" :label="item.name" :name="item.id" class="homeflash">
          <div class="flashlogo">           
          </div>
     </el-tab-pane>
-    <el-tab-pane label="动态" name="second">动态</el-tab-pane>
   </el-tabs>
 </template>
 <style scoped>
@@ -17,7 +16,13 @@
 export default {
         data() {
       return {
-        activeName: 'first'
+        activeName: 'first',
+        navs:[
+          { name: "热文", id: "second" },
+        { name: "新闻", id: "third" },
+        { name: "人物", id: "fourth" },
+        { name: "行情", id: "fifth" }
+        ]
       };
     },
     methods: {
