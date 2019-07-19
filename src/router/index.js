@@ -1,15 +1,10 @@
-import Vue from 'vue'
+
 import Router from 'vue-router'
-import { resolve } from 'url';
-import { log } from 'util';
-// const Home=resolve=>require(['@/components/Home'],resolve);
-// const Flash=resolve=>require(['@/components/pages/flash/flash'],resolve);
-// const Market=resolve=>require(['@/components/pages/market/market.vue'],resolve);
-import Home from '@/components/Home'
-import Flash from '@/components/pages/flash/flash'
-import Market from '@/components/pages/market/market.vue'
-Vue.use(Router)
+const Home=resolve=>require(['@/components/Home'],resolve);
+const Flash=resolve=>require(['@/components/pages/flash/flash'],resolve);
+const Market=resolve=>require(['@/components/pages/market/market.vue'],resolve);
 const router= new Router({
+  mode:'history',
   routes: [
     {
       path:'/',redirect:'home'
@@ -30,7 +25,6 @@ const router= new Router({
       component:Market
     }
   ],
-  mode:'history',
 });
 router.beforeEach((to,from,next)=>{
 next()

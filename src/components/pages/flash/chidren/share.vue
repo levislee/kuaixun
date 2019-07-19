@@ -6,19 +6,6 @@
   </div>
 </template>
 <style scoped>
-.shadown {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  margin: auto;
-  padding: 0;
-  box-sizing: border-box;
-  z-index: 999;
-}
 .shadown_main {
   width: 400px;
   height: 700px;

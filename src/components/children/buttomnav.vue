@@ -160,7 +160,8 @@ export default {
         { name: "人物", id: "fourth" },
         { name: "行情", id: "fifth" },
         { name: "百科", id: "third" }
-      ]
+      ],
+      arr:[1,4,2,3,3,2,5,6,7,8,5,10]
     };
   },
   methods: {
@@ -179,22 +180,20 @@ export default {
     },
     getHomeData() {
       this.$http.get(this.$api.homefirst).then(rsp => {
+        console.log(111);    
+        console.log(rsp.text());       
         if (rsp.status == 200) {
           this.firstdata = rsp.data;
           console.log(this.firstdata);
+        }else{
+            let err=new Error()
+            alert(111)
+            console.log(err);          
         }
-      });
-    },
-    getData(option) {
-      this.$http.get(option).then(rsp => {
-        console.log(rsp);
-        if (rsp.status == 200) {
-          this.otherdata = rsp.data.list;
-        }
-      });
+      }).catch(error=>console.log(111))
     }
   },
-  created() {
+  mounted() {
     this.getHomeData();
   },
   filters: {

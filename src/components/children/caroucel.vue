@@ -10,7 +10,7 @@
 
 <style>
 #caroucel{
-    width: 548px;
+    width: 770px;
     height: 275px;
 }
 .el-carousel__container{

@@ -27,14 +27,14 @@
   margin: 0 auto;
 }
 .market_head {
-  height: 1rem;
-  line-height: 1rem;
+  height: 60px;
+  line-height: 60px;
   font-weight: 900;
   text-align: left;
 }
 .market_main {
   display: flex;
-  height: 1rem;
+  height: 60px;
   align-items: center;
   justify-content: space-around;
   align-items: center;

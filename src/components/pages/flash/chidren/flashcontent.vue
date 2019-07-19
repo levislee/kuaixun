@@ -2,7 +2,7 @@
   <div>
     <el-tabs v-model="activeName" @tab-click="handleClick" class="flashmain">
       <el-tab-pane label="快讯" name="first">
-        <div class="analyse" v-for="item in type" :key="item">
+        <div class="analyse" v-for="(item,index) in type" :key="index" v-load-more="loadmore(index)">
           <div class="grade"></div>
           <div class="time">18:10</div>
           <div class="analyselist">
@@ -181,10 +181,12 @@
 
 <script>
 import appShare from "./share.vue";
+import {loadMore} from "../../../common/mixin.js"
 export default {
   components: {
     appShare
   },
+  mixins:[loadMore],
   data() {
     return {
       activeName: "first",
@@ -198,6 +200,12 @@ export default {
     },
     toshare() {
       this.isshare = true;
+    },
+    loadmore(index){
+      console.log(index);
+           if (index>1) {
+             return
+           }
     }
   }
 };

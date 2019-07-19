@@ -1,7 +1,6 @@
 <template>
   <div id="home">
     <!--顶部走马灯-->
-
     <div id="bijiasuo">
       <div class="bijiasuoitem" v-for="(item,index) in bijiasuo" :key="index">
         <img src="https://img.jinse.com/1404375" alt>
@@ -14,15 +13,6 @@
     <!---中部走马灯-->
     <div id="middle">
       <caroucel></caroucel>
-      <ul id="middlecenter">
-        <!--走马灯右边-->
-        <li class="middlecentertop">
-          <img src="https://img.jinse.com/1897675_image32.png" alt width="200px" height="127px">
-        </li>
-        <li>
-          <img src="https://img.jinse.com/1600997_image32.png" alt width="200px" height="127px">
-        </li>
-      </ul>
       <ul id="middleright">
         <li class="middlerighttop">
           <p>风险提示：防范以“虚拟货币”“区块链”名义进行非法集资的风险——银保监会等五部门</p>
@@ -38,7 +28,7 @@
         <bottom-nav></bottom-nav>
       </div>
       <div id="content-right">
-        <div class="link">
+        <!-- <div class="link">
           <div class="link-list" v-for="item in 6" :key="item">
             <div class="link-left">
               <img src="https://img.jinse.com/1854243" alt>
@@ -48,7 +38,7 @@
               <span>邀请好友坐享高鹗</span>
             </div>
           </div>
-        </div>
+        </div> -->
         <!--快讯-->
         <div class="flash">
           <home-flash></home-flash>
@@ -58,14 +48,15 @@
   </div>
 </template>
 
-<script>
-const caroucel=resolve=>require(['./pages/Slider/caroucel'],resolve); 
+<script> 
 const bottomNav=resolve=>require(['./children/buttomnav'],resolve); 
 const homeFlash=resolve=>require(['./children/flash'],resolve); 
+const caroucel=resolve=>require(['./children/caroucel'],resolve);  
 export default {
   data() {
     return {
-      bijiasuo: [1, 2, 3, 5, 6, 1, 1, 1, 1, 1, 1, 1]
+      bijiasuo: [1, 2, 3, 5, 6, 1, 1, 1, 1, 1, 1, 1],
+      islogin:true
     };
   },
   components: {
