@@ -11,7 +11,7 @@
           class="el-menu-demo"
           mode="horizontal"
           @select="handleSelect"
-          id="headleft"
+          id="head_name"
         >
           <el-menu-item index="Home" class="navcontent">
           <span>  <router-link :to="{name:'Home'}">首页</router-link></span>
@@ -102,7 +102,7 @@ export default {
   display: flex;
   justify-content:flex-start;
 }
-#headleft {
+#head_name {
   width: 70%;
   height: 60px;
   display: flex;
