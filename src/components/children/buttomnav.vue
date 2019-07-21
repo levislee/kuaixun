@@ -1,16 +1,16 @@
 <template>
   <el-tabs v-model="activeName" @tab-click="handleClick" class="btmnav" >
     <el-tab-pane label="头条" name="first">
-      <div class="btnavlist" v-for="(item,index) in firstdata" :key="index">
+      <div class="btnavlist" v-for="(item,index) in firstdata" :key="index" @click="getData()">
         <div class="btnavimg">
-          <img v-lazy="item.app_pic_url" alt />
+          <img v-lazy="item.extra.thumbnail_pic" alt />
         </div>
         <div class="btnavlistartical">
           <ul>
             <li>
-              <h3>{{item.description}}</h3>
+              <h3>{{item.short_title}}</h3>
             </li>
-            <li class="artical">{{item.name}}</li>
+            <li class="artical">{{item.title}}</li>
             <li class="articalbottom">
               <span class="articalmsg">
                 <span class="placement">置顶</span> Maxwell · 21小时前
@@ -22,7 +22,7 @@
       </div>
     </el-tab-pane>
     <el-tab-pane v-for="(item,index) in nav" :key="index" :label="item.name">
-      <div class="btnavlist" v-for="(item,index) in otherdata" :key="index" @click="getData()">
+      <div class="btnavlist" v-for="(item,index) in firstdata" :key="index" @click="getData()">
         <div class="btnavimg">
           <img v-lazy="item.extra.thumbnail_pic" alt />
         </div>
@@ -166,35 +166,40 @@ export default {
   },
   methods: {
     handleClick(tab, event) {
-      if (tab.label == "热文") {
-        this.getData(this.$api.hotarticle);
+      if(tab.label == "头条"){
+        this.getData('/api/article/info?type=toutiao');
+      }
+      else if (tab.label == "热文") {
+        this.getData('/api/article/info?type=rewen');
       }else if(tab.label == "新闻"){
-          this.getData(this.$api.homenews);
+          this.getData('/api/article/info?type=xinwen');
       }else if(tab.label == "人物"){
-          this.getData(this.$api.homeman);
+          this.getData('/api/article/info?type=renwu');
       }else if(tab.label == "行情"){
-           this.getData(this.$api.market);
+           this.getData('/api/article/info?type=hangqing');
       }else if(tab.label == "百科"){
-           this.getData(this.$api.wiki);
+           this.getData('/api/article/info?type=baike');
       }
     },
-    getHomeData() {
-      this.$http.get(this.$api.homefirst).then(rsp => {
-        console.log(111);    
-        console.log(rsp.text());       
+        getData(options) {  
+      this.$http.get(options).then(rsp => {
+        console.log(rsp);          
         if (rsp.status == 200) {
-          this.firstdata = rsp.data;
+          this.firstdata = rsp.data.data.list;
           console.log(this.firstdata);
         }else{
             let err=new Error()
             alert(111)
             console.log(err);          
         }
-      }).catch(error=>console.log(111))
+      }).catch(error=>console.log(222))
     }
   },
   mounted() {
-    this.getHomeData();
+    // this.getHomeData();
+  },
+  created(){
+    this.getData('/api/article/info?type=toutiao')
   },
   filters: {
     formatDate(time) {
