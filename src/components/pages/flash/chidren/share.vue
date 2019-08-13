@@ -13,6 +13,7 @@
   background: linear-gradient(red, blue, yellow);
   z-index: 9999;
   box-sizing: border-box;
+  justify-content: space-around
   /* animation: sliderdown 0.3s linear; */
 }
 /* @keyframes sliderdown {
@@ -43,7 +44,8 @@ export default {
           windowHeight: document.body.scrollHeight,
           x: 0,
           y: window.pageYOffset,
-          backgroundColor:"black"
+          backgroundColor:"black",
+          margin:"auto"
         }).then(canvas => {
           var imgUri = canvas
             .toDataURL("image/png")

@@ -1,5 +1,5 @@
 
-export const domain = '';
+export const domain = 'http://193.112.34.153:7010';
 export default {
 homefirst:`/article/info?type=toutiao`  ,//头条
 hotarticle:`/article/info?type=rewen`, //热文

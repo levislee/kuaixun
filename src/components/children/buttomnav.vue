@@ -8,14 +8,14 @@
         <div class="btnavlistartical">
           <ul>
             <li>
-              <h3>{{item.short_title}}</h3>
+              <h3> <span class="only" v-if="item.extra.attribute_exclusive">独家</span>{{item.short_title}}</h3>
             </li>
             <li class="artical">{{item.title}}</li>
             <li class="articalbottom">
               <span class="articalmsg">
-                <span class="placement">置顶</span> Maxwell · 21小时前
+                <span class="placement" v-if="item.is_top">置顶</span>{{item.extra.author}} · {{item.extra.published_at|formatDate}}分钟前</span>
               </span>
-              <div class="visited">12345</div>
+              <div class="visited"> {{item.extra.read_number_yuan}}</div>
             </li>
           </ul>
         </div>
@@ -80,7 +80,21 @@
   background-color: red;
   width: 28px;
 }
-
+.only{
+  display: inline-block;
+    border-radius: 2px;
+    margin-right: 4px;
+    font-size: 14px;
+    color: #fff;
+    width: 46px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    padding: 0;
+    font-weight: 500;
+    background: #f29700;
+    transform: translateY(1px);
+}
 .btnavlist {
   display: flex;
   justify-content: flex-start;
@@ -167,18 +181,18 @@ export default {
   methods: {
     handleClick(tab, event) {
       if(tab.label == "头条"){
-        this.getData('/api/article/info?type=toutiao');
+        this.getData('/article/info?type=toutiao');
       }
       else if (tab.label == "热文") {
-        this.getData('/api/article/info?type=rewen');
+        this.getData('/article/info?type=rewen');
       }else if(tab.label == "新闻"){
-          this.getData('/api/article/info?type=xinwen');
+          this.getData('/article/info?type=xinwen');
       }else if(tab.label == "人物"){
-          this.getData('/api/article/info?type=renwu');
+          this.getData('/article/info?type=renwu');
       }else if(tab.label == "行情"){
-           this.getData('/api/article/info?type=hangqing');
+           this.getData('/article/info?type=hangqing');
       }else if(tab.label == "百科"){
-           this.getData('/api/article/info?type=baike');
+           this.getData('/article/info?type=baike');
       }
     },
         getData(options) {  
@@ -199,7 +213,7 @@ export default {
     // this.getHomeData();
   },
   created(){
-    this.getData('/api/article/info?type=toutiao')
+    this.getData('/article/info?type=toutiao')
   },
   filters: {
     formatDate(time) {
